@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Automation Tool for Agencies - AI-Powered Content Automation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Content Automation</h1>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="#features">Features</a>
+            <a href="about.html">About Me</a>
+            <a href="home.html">About the Tool</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Elevate Your Digital Strategy with AI</h2>
+                <p>Streamline your workflow, from content generation to client reporting, with our intelligent automation platform.</p>
+                <button class="cta-button">Request a Demo</button>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Core Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>AI Blog Generator</h3>
+                    <p>Automatically generate high-quality, SEO-optimized blog posts using artificial intelligence.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Social Media Automation</h3>
+                    <p>Instantly create and schedule engaging content for all your social media platforms.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Automated Client Reporting</h3>
+                    <p>Generate in-depth reports for your clients on SEO progress, traffic analysis, and more.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Keyword Rank Tracker</h3>
+                    <p>Track your keyword rankings on Google and get insights to improve your SEO performance.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Intuitive Content Calendar</h3>
+                    <p>Plan, manage, and visualize your entire content strategy with a user-friendly calendar.</p>
+                </div>
+                 <div class="feature-card">
+                    <h3>How to write AI blogs?</h3>
+                    <p>Our tool simplifies this. Provide a topic and keywords, and our AI generates a complete, SEO-friendly blog post for you to review and publish.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Content Automation Tool. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
