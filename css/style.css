@@ -4,15 +4,15 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #343a40; /* Darker grey text */
+    background-color: #fdf6e3; /* Soft, light beige */
+    color: #5d4037; /* Rich brown */
     overflow-x: hidden;
 }
 
 .header {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(253, 246, 227, 0.9);
     padding: 15px 50px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(93, 64, 55, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,7 +26,7 @@ body {
 .header h1 {
     margin: 0;
     font-size: 1.8em;
-    color: #007bff; /* Blue */
+    color: #e67e22; /* Vibrant orange */
     font-weight: 700;
 }
 
@@ -37,7 +37,7 @@ body {
 
 .header a {
     text-decoration: none;
-    color: #6c757d; /* Medium grey */
+    color: #8d6e63; /* Muted brown */
     padding: 8px 15px;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
@@ -45,7 +45,7 @@ body {
 }
 
 .header a:hover, .header a.active {
-    background-color: #007bff;
+    background-color: #e67e22;
     color: #ffffff;
 }
 
@@ -58,6 +58,7 @@ body {
     background-size: cover;
     background-position: center;
     text-align: center;
+    background-image: linear-gradient(rgba(253, 246, 227, 0.8), rgba(253, 246, 227, 0.8));
 }
 
 .hero-content {
@@ -70,21 +71,25 @@ body {
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
-    color: #343a40;
+    color: #d35400;
 }
 
-.digital-strategy, .ai-text {
-    color: #007bff; /* Blue for emphasis */
+.digital-strategy {
+    color: #d35400;
+}
+
+.ai-text {
+    color: #d35400;
 }
 
 .hero p {
     font-size: 1.2em;
     margin-bottom: 40px;
-    color: #6c757d;
+    color: #8d6e63;
 }
 
 .cta-button {
-    background: linear-gradient(45deg, #007bff, #0056b3);
+    background: linear-gradient(45deg, #e67e22, #d35400);
     color: #fff;
     padding: 15px 35px;
     border: none;
@@ -92,12 +97,12 @@ body {
     font-size: 1.2em;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.2);
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(230, 126, 34, 0.3);
 }
 
 .features {
@@ -109,7 +114,7 @@ body {
     font-size: 2.8em;
     font-weight: 700;
     margin-bottom: 60px;
-    color: #343a40;
+    color: #5d4037;
 }
 
 .feature-grid {
@@ -119,11 +124,11 @@ body {
 }
 
 .feature-card {
-    background: #ffffff;
-    border: 1px solid #dee2e6;
+    background: #fff;
+    border: 1px solid #d7c8be;
     border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.05);
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     text-decoration: none;
     color: inherit;
@@ -131,29 +136,29 @@ body {
 
 .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-    border-color: #007bff;
+    box-shadow: 0 12px 24px rgba(93, 64, 55, 0.1);
+    border-color: #e67e22;
 }
 
 .feature-card h3 {
     font-size: 1.6em;
     font-weight: 600;
-    color: #007bff;
+    color: #e67e22;
     margin-bottom: 15px;
 }
 
 .feature-card p {
     font-size: 1em;
-    color: #6c757d;
+    color: #8d6e63;
     line-height: 1.6;
 }
 
 .footer {
-    background-color: #ffffff;
-    color: #6c757d;
+    background-color: #fdf6e3;
+    color: #8d6e63;
     text-align: center;
     padding: 20px 50px;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid #d7c8be;
 }
 
 .contact-section {
@@ -173,18 +178,6 @@ body {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.contact-icons a[href*="facebook.com"] {
-    color: #1877F2;
-}
-
-.contact-icons a[href*="linkedin.com"] {
-    color: #0A66C2;
-}
-
-.contact-icons a[href*="mailto"] {
-    color: #c71610;
-}
-
 .contact-icons a:hover {
     transform: scale(1.1);
 }
@@ -198,9 +191,26 @@ body {
     width: 100%;
     padding: 15px;
     margin-bottom: 15px;
-    border: 1px solid #ced4da;
+    border: 1px solid #d7c8be;
     border-radius: 5px;
     font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #5d4037;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-slideshow {
+    flex: 1;
 }
 
 @keyframes slideInFromLeft {
@@ -208,14 +218,19 @@ body {
     to { opacity: 1; transform: translateX(0); }
 }
 
+/* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-.mySlides { display: none; }
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
 
+/* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -223,20 +238,29 @@ body {
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: #007bff;
+  color: white;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  background-color: rgba(0,0,0,0.3);
 }
 
-.next { right: 0; border-radius: 3px 0 0 3px; }
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
 
-.prev:hover, .next:hover { background-color: rgba(0, 123, 255, 0.1); }
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
 
+/* Caption text */
 .text {
-  color: #343a40;
+  color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
@@ -245,39 +269,45 @@ body {
   text-align: center;
 }
 
+/* Number text (1/3 etc) */
 .numbertext {
-  color: #6c757d;
+  color: #f2f2f2;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
   top: 0;
 }
 
+/* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
-  height: 12px;
-  width: 12px;
+  height: 15px;
+  width: 15px;
   margin: 0 2px;
-  background-color: #ced4da;
+  background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover { background-color: #007bff; }
+.active, .dot:hover {
+  background-color: #717171;
+}
 
+/* Fading animation */
 .fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
   animation-name: fade;
   animation-duration: 1.5s;
 }
 
-@keyframes fade {
-  from { opacity: .4 }
-  to { opacity: 1 }
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
-@media (max-width: 768px) {
-    .about-container { grid-template-columns: 1fr; }
-    .header { padding: 15px 20px; width: calc(100% - 40px); }
-    .features, .contact-section { padding: 80px 20px; }
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
