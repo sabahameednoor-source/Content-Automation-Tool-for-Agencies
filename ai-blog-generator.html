@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Blog Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>AI Blog Generator</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tool-section">
+            <h2>Generate Your AI-Powered Blog Post</h2>
+            <div class="tool-container">
+                <div class="input-area">
+                    <label for="topic">Topic:</label>
+                    <input type="text" id="topic" placeholder="e.g., The Future of Artificial Intelligence">
+
+                    <label for="keywords">Keywords:</label>
+                    <input type="text" id="keywords" placeholder="e.g., AI, machine learning, deep learning">
+
+                    <label for="tone">Select Tone:</label>
+                    <select id="tone">
+                        <option value="professional">Professional</option>
+                        <option value="casual">Casual</option>
+                        <option value="formal">Formal</option>
+                        <option value="friendly">Friendly</option>
+                    </select>
+
+                    <button id="generate-btn">Generate Content</button>
+                </div>
+                <div class="output-area">
+                    <h3>Generated Content</h3>
+                    <div id="output-content" contenteditable="true">
+                        <p>Your generated blog post will appear here. You can edit it directly.</p>
+                    </div>
+                    <button id="copy-btn">Copy Content</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Content Automation Tool. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('generate-btn').addEventListener('click', function() {
+            const topic = document.getElementById('topic').value;
+            const keywords = document.getElementById('keywords').value.split(',').map(kw => kw.trim());
+            const tone = document.getElementById('tone').value;
+
+            // Placeholder for a more advanced AI generation logic
+            const generatedContent = `
+                <h2>${topic}</h2>
+                <p><strong>Keywords:</strong> ${keywords.join(', ')}</p>
+                <p><em>Tone: ${tone.charAt(0).toUpperCase() + tone.slice(1)}</em></p>
+                
+                <h3>Introduction</h3>
+                <p>The world is rapidly evolving, and at the heart of this transformation lies <strong>Artificial Intelligence (AI)</strong>. This article explores the exciting landscape of <strong>${topic}</strong>, focusing on key areas such as <strong>${keywords.join(', ')}</strong>. With a <strong>${tone}</strong> approach, we will delve into the current state and future possibilities of this groundbreaking technology.</p>
+
+                <h3>Understanding the Core Concepts</h3>
+                <p>Before we dive deeper, let's establish a foundational understanding of the core concepts. <strong>${keywords[0]}</strong>, for example, is a crucial aspect of modern AI. It involves... [Elaborate on the first keyword].  Similarly, <strong>${keywords[1]}</strong> plays a vital role by... [Elaborate on the second keyword]. Finally, understanding <strong>${keywords[2]}</strong> is key to appreciating the full scope of... [Elaborate on the third keyword].</p>
+
+                <h3>The Impact on Industries</h3>
+                <p>The influence of AI is not confined to the tech world; it's revolutionizing industries across the board. From healthcare to finance, and from entertainment to transportation, AI is a game-changer. For instance, in the healthcare sector, AI is being used to... [Provide a specific example]. In the financial industry, AI algorithms are... [Provide a specific example].</p>
+
+                <h3>The Human Element</h3>
+                <p>While the technical aspects of AI are fascinating, it's the human element that truly brings it to life. To create human-optimized content, it's essential to connect with the reader on a personal level. This can be achieved by incorporating storytelling, addressing the reader's pain points, and providing actionable insights. For example, when writing about <strong>${topic}</strong>, one could share a personal anecdote about how AI has impacted their life or work.</p>
+
+                <h3>Conclusion</h3>
+                <p>In conclusion, the journey into the world of <strong>${topic}</strong> is both exciting and challenging. By understanding the core concepts, exploring real-world applications, and never losing sight of the human element, we can unlock the full potential of AI. As we continue to push the boundaries of what's possible, one thing is certain: the future is intelligent.</p>
+            `;
+
+            document.getElementById('output-content').innerHTML = generatedContent;
+        });
+
+        document.getElementById('copy-btn').addEventListener('click', function() {
+            const content = document.getElementById('output-content').innerText;
+            navigator.clipboard.writeText(content).then(() => {
+                alert('Content copied to clipboard!');
+            });
+        });
+    </script>
+
+</body>
+</html>
