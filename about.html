@@ -7,27 +7,97 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="header">
-        <h1>About Me</h1>
+
+    <header class="header">
+        <h1>Saba Hameed</h1>
         <nav>
             <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </nav>
-    </div>
-    <div class="container" style="text-align: center;">
+    </header>
 
-        <!-- Your banner image -->
-        <img src="images/saba hameed FaceBook Introduction.png" alt="Saba Hameed Banner" style="max-width: 100%; height: auto; border-radius: 8px;">
+    <section class="hero" style="background-image: linear-gradient(rgba(10, 10, 26, 0.9), rgba(10, 10, 26, 0.7)), url('images/creative%20writing.jpg');">
+        <div class="hero-content" style="text-align: center; max-width: 100%;">
+            <h2>About Me</h2>
+        </div>
+    </section>
 
-        <h2>Saba Hameed</h2>
-        <p style="max-width: 800px; margin: 1rem auto; text-align: left;">
-            Digital AI Content Creator, specializing in AI Automation.
-            <br>
-            Are you ready to rank your website with SEO Content writing?
-        </p>
+    <section class="features">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Saba Hameed</h2>
+                <p>
+                    Digital AI Content Creator, specializing in AI Automation.
+                    <br>
+                    Are you ready to rank your website with SEO Content writing?
+                </p>
+                <p>
+                    I have extensive experience in creating high-quality, SEO-optimized content that drives traffic and engagement. My expertise in AI automation allows me to streamline the content creation process, delivering exceptional results for my clients.
+                </p>
+            </div>
+            <div class="about-slideshow">
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                      <img src="images/My SEO experiences.jpg" style="width:100%; border-radius: 8px;">
+                    </div>
         
-        <!-- Your certificate image -->
-        <img src="css/Urdu Ai certificate.png" alt="Urdu AI Certificate" style="max-width: 600px; height: auto; border-radius: 8px; margin-top: 2rem;">
+                    <div class="mySlides fade">
+                      <img src="images/creative writing.jpg" style="width:100%; border-radius: 8px;">
+                    </div>
+        
+                    <!-- Previous and Next buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+                </div>
+                <br>
+        
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Saba Hameed. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+        }
+    </script>
+
 </body>
 </html>
