@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Automation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Social Media Automation</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tool-section">
+            <h2>Create & Schedule Social Media Posts</h2>
+            <div class="post-design-container">
+                <div class="post-editor">
+                    <h3>Post Editor</h3>
+                    <label for="platform">Platform:</label>
+                    <select id="platform">
+                        <option value="twitter">Twitter</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="linkedin">LinkedIn</option>
+                    </select>
+
+                    <label for="post-topic">Topic:</label>
+                    <input type="text" id="post-topic" placeholder="e.g., New Product Launch">
+
+                    <label for="post-content">Content:</label>
+                    <textarea id="post-content" placeholder="Write your post content here..." rows="8"></textarea>
+
+                    <label for="post-image">Image URL:</label>
+                    <input type="text" id="post-image" placeholder="Optional: Enter image URL">
+
+                    <label for="post-tone">Select Tone:</label>
+                    <select id="post-tone">
+                        <option value="professional">Professional</option>
+                        <option value="casual">Casual</option>
+                        <option value="witty">Witty</option>
+                        <option value="informative">Informative</option>
+                    </select>
+
+                    <button id="generate-post-btn">Generate with AI</button>
+                    <button id="schedule-post-btn">Schedule Post</button>
+
+                </div>
+                <div class="post-preview">
+                    <h3>Post Preview</h3>
+                    <div class="post-preview-header">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Your Page</span>
+                    </div>
+                    <div class="post-preview-content">
+                        <p id="preview-content">Your generated social media post will appear here.</p>
+                    </div>
+                    <div id="preview-image-container" class="post-preview-image" style="display: none;"></div>
+                    <div class="post-preview-footer">
+                        <i class="fas fa-thumbs-up"></i>
+                        <i class="fas fa-comment"></i>
+                        <i class="fas fa-share"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Content Automation Tool. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const platform = document.getElementById('platform');
+        const topic = document.getElementById('post-topic');
+        const content = document.getElementById('post-content');
+        const tone = document.getElementById('post-tone');
+        const image = document.getElementById('post-image');
+        
+        const previewContent = document.getElementById('preview-content');
+        const previewImageContainer = document.getElementById('preview-image-container');
+
+        const defaultContent = 'Your generated social media post will appear here.';
+        previewContent.innerText = defaultContent;
+
+        function updatePreview() {
+            const postText = content.value.trim();
+            const imageUrl = image.value.trim();
+
+            previewContent.innerText = postText || defaultContent;
+
+            if (imageUrl) {
+                previewImageContainer.style.backgroundImage = `url(${imageUrl})`;
+                previewImageContainer.style.display = 'block';
+            } else {
+                previewImageContainer.style.display = 'none';
+            }
+        }
+
+        content.addEventListener('input', updatePreview);
+        image.addEventListener('input', updatePreview);
+
+        document.getElementById('generate-post-btn').addEventListener('click', function() {
+            const topicValue = topic.value;
+            const toneValue = tone.value;
+            const platformValue = platform.value;
+
+            if (!topicValue) {
+                alert('Please enter a topic to generate a post.');
+                return;
+            }
+
+            let generatedText = '';
+            const hashtags = `#${topicValue.replace(/\s+/g, '')} #AI #ContentAutomation #${platformValue}`;
+
+            switch (toneValue) {
+                case 'professional':
+                    generatedText = `**${topicValue}**\n\nWe are pleased to announce our latest update regarding ${topicValue}. Our team has been working diligently to bring you this improvement. \n\nKey Highlights:\n- Insight 1 about ${topicValue}\n- Insight 2 about ${topicValue}\n\nFor more details, visit our website. \n\n${hashtags}`;
+                    break;
+                case 'casual':
+                    generatedText = `Guess what?! We've been cooking up something new with ${topicValue}. 🍳 Super excited to share this with you all! \n\nQuick peek:\n- It's going to make things so much easier.\n- You're going to love it!\n\nLet us know what you think! 👇\n\n${hashtags}`;
+                    break;
+                case 'witty':
+                    generatedText = `They said it couldn't be done. They were wrong. ${topicValue} just got a major glow-up. ✨\n\nWhat's new, you ask?\n- Magic, mostly.\n- And a lot of code.\n\nDrop a comment if you're as excited as we are. 😉\n\n${hashtags}`;
+                    break;
+                case 'informative':
+                    generatedText = `**Deep Dive: ${topicValue}**\n\nToday, we're exploring ${topicValue}. Here's what you need to know:\n\n1.  **Fact 1:** A detailed, informative point about ${topicValue}.\n2.  **Fact 2:** Another key piece of information to educate your audience.\n3.  **Fact 3:** A final, compelling fact to leave a lasting impression.\n\nLearn more on our blog. \n\n${hashtags}`;
+                    break;
+                default:
+                    generatedText = `Here's an update on ${topicValue}. We hope you find it interesting. \n\n${hashtags}`;
+            }
+            
+            content.value = generatedText;
+            updatePreview();
+        });
+
+        document.getElementById('schedule-post-btn').addEventListener('click', function() {
+            // Placeholder for scheduling functionality
+            alert('Scheduling functionality is not yet implemented.');
+        });
+    </script>
+
+</body>
+</html>

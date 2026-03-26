@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Blog Writer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>AI Blog Writer</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tool-section">
+            <h2>Generate SEO-Friendly Blog Posts</h2>
+            <div class="post-design-container">
+                <div class="post-editor">
+                    <h3>Blog Details</h3>
+                    <label for="blog-topic">Topic:</label>
+                    <input type="text" id="blog-topic" placeholder="e.g., The Future of AI in Marketing">
+
+                    <label for="blog-keywords">Keywords (comma-separated):</label>
+                    <input type="text" id="blog-keywords" placeholder="e.g., AI, marketing, SEO">
+
+                    <label for="word-count">Select Word Count:</label>
+                    <select id="word-count">
+                        <option value="1000">1000 words</option>
+                        <option value="1500">1500 words</option>
+                        <option value="2500">2500 words</option>
+                    </select>
+
+                    <button id="generate-blog-btn">Generate Blog</button>
+                </div>
+                <div class="post-preview">
+                    <h3>Generated Blog</h3>
+                    <div id="blog-output" contenteditable="true" style="white-space: pre-wrap; border: 1px solid #ddd; padding: 15px; border-radius: 5px; background: #f9f9f9; min-height: 300px;">
+                        <p>Your generated blog post will appear here.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Content Automation Tool. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('generate-blog-btn').addEventListener('click', function() {
+            const topic = document.getElementById('blog-topic').value;
+            const keywords = document.getElementById('blog-keywords').value.split(',').map(kw => kw.trim()).filter(kw => kw);
+            const wordCount = document.getElementById('word-count').value;
+
+            if (!topic) {
+                alert('Please enter a topic to generate a blog post.');
+                return;
+            }
+
+            // --- SEO Elements ---
+            let blogContent = `<h3>SEO Meta Title Suggestion:</h3>\n<p>${topic} | Your Company Name</p>\n\n`;
+            blogContent += `<h3>SEO Meta Description Suggestion:</h3>\n<p>Explore the depths of ${topic}. This comprehensive guide covers ${keywords.join(', ')} and offers expert insights to help you stay ahead. Read now for actionable advice.</p>\n\n`;
+            blogContent += `<hr>\n\n`;
+
+            // --- Blog Post ---
+            blogContent += `<h1>${topic}</h1>\n\n`;
+
+            // --- Introduction ---
+            blogContent += `<h2>Introduction: Understanding ${topic}</h2>\n`;
+            blogContent += `<p>In today's fast-paced digital landscape, understanding ${topic} is no longer optional, but a necessity for success. This article provides a comprehensive deep-dive into the core components of this subject, focusing on essential keywords such as ${keywords.join(', ')}. Whether you are a seasoned professional or new to the field, this guide will provide valuable insights and actionable strategies. Our goal is to deliver a detailed overview that is approximately ${wordCount} words long, ensuring a thorough exploration of the subject matter.</p>\n\n`;
+
+            // --- Main Body ---
+            const placeholderParagraph = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. This paragraph will be repeated to simulate the desired word count, providing a more realistic preview of the final article\'s length and structure.</p>\n";
+
+            let paragraphsPerSection = 3;
+            if (wordCount === '1500') {
+                paragraphsPerSection = 5;
+            } else if (wordCount === '2500') {
+                paragraphsPerSection = 8;
+            }
+
+            keywords.forEach(keyword => {
+                if (keyword) {
+                    const capitalizedKeyword = keyword.charAt(0).toUpperCase() + keyword.slice(1);
+                    blogContent += `<h2>The Critical Role of ${capitalizedKeyword} in ${topic}</h2>\n`;
+                    blogContent += `<p>When discussing ${topic}, the significance of <strong>${keyword}</strong> cannot be overstated. It serves as a foundational pillar, influencing everything from strategy to execution. Understanding its nuances is key to unlocking the full potential of your efforts.</p>\n`;
+                    blogContent += `<h3>Deep Dive into ${capitalizedKeyword}</h3>\n`;
+                    for(let i=0; i<paragraphsPerSection; i++) {
+                         blogContent += placeholderParagraph;
+                    }
+                    blogContent += `\n`;
+                }
+            });
+
+            if (keywords.length === 0) {
+                blogContent += `<p>Please provide keywords to generate a more detailed blog post. For now, here is some placeholder content to demonstrate the structure.</p>\n`;
+                for(let i=0; i<paragraphsPerSection * 2; i++) {
+                     blogContent += placeholderParagraph;
+                }
+                blogContent += `\n`;
+            }
+
+            // --- Conclusion ---
+            blogContent += `<h2>Conclusion and Future Outlook</h2>\n`;
+            blogContent += `<p>In summary, ${topic} is a dynamic and integral part of modern digital strategy. By focusing on key areas like ${keywords.join(', ')}, you can create a robust framework for success. The landscape is ever-changing, but a solid understanding of these principles will ensure you remain adaptable and effective.</p>\n`;
+            blogContent += `<p>What are your thoughts on ${topic}? Share your insights in the comments below or contact us to learn how our solutions can help you achieve your goals.</p>`;
+
+            document.getElementById('blog-output').innerHTML = blogContent.replace(/\n/g, '<br>');
+        });
+    </script>
+
+</body>
+</html>
